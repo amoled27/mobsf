@@ -1,0 +1,28 @@
+.centerize {
+    display: flex;
+    justify-content: center;
+}
+
+.android {
+    width: 50%;
+}
+
+.appscore-warning {
+    width: 40%;
+    padding: 0px 10px;
+}
+
+.appscore-trackers-warning {
+    width: 45%;
+    padding: 0px 10px;
+}
+
+.infoTable {
+    td {
+        // padding: 7px 24px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
