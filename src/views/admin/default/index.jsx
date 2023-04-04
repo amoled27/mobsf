@@ -25,8 +25,12 @@ import {
   Box,
   SimpleGrid,
   useColorModeValue,
+  Icon
 } from "@chakra-ui/react";
 
+import {
+  MdBarChart,
+} from "react-icons/md";
 // Custom components
 import React from "react";
 import AppScore from "views/admin/default/components/AppScore";
@@ -34,7 +38,12 @@ import FileInformationTable
  from "./components/FileInformationTable";
 import AppInformationTable
  from "./components/AppInformationTable";
-
+ import PlaystoreInformationTable
+ from "./components/PlaystoreInformationTable";
+import PlaystoreDescription from "./components/PlaystoreDescription";
+import DeveloperInformationTable from "./components/DeveloperInformationTable";
+import MiniStatistics from "components/card/MiniStatistics";
+import IconBox from "components/icons/IconBox";
 export default function UserReports() {
   // Chakra Color Mode
   const brandColor = useColorModeValue("brand.500", "white");
@@ -50,10 +59,32 @@ export default function UserReports() {
         <FileInformationTable />
       </SimpleGrid>
 
-      {/* <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px' mb='20px'>
-        <TotalSpent />
-        <WeeklyRevenue />
-      </SimpleGrid> */}
+      <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px' mb='20px'>
+        <PlaystoreInformationTable />
+        <SimpleGrid gap='20px'>
+          <PlaystoreDescription />
+          <DeveloperInformationTable />
+        </SimpleGrid>
+      </SimpleGrid>
+      <SimpleGrid
+        columns={{ base: 1, md: 2, lg: 4, "2xl": 4 }}
+        gap='20px'
+        mb='20px'>
+        <MiniStatistics
+          startContent={
+            <IconBox
+              w='56px'
+              h='56px'
+              bg={boxBg}
+              icon={
+                <Icon w='32px' h='32px' as={MdBarChart} color={brandColor} />
+              }
+            />
+          }
+          name='Activities'
+          value='4' 
+        />
+      </SimpleGrid>
       {/* <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap='20px' mb='20px'>
         <CheckTable columnsData={columnsDataCheck} tableData={tableDataCheck} />
         <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
