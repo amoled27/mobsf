@@ -21,69 +21,62 @@
 */
 
 // Chakra imports
-import {
-  Box,
-  SimpleGrid,
-  useColorModeValue,
-  Icon
-} from "@chakra-ui/react";
+import { Box, SimpleGrid, useColorModeValue, Icon } from "@chakra-ui/react";
 
-import {
-  MdBarChart,
-} from "react-icons/md";
+import { MdBarChart, MdSettings, MdLanguage, MdCellTower, MdInstallMobile } from "react-icons/md";
 // Custom components
 import React from "react";
 import AppScore from "views/admin/default/components/AppScore";
-import FileInformationTable
- from "./components/FileInformationTable";
-import AppInformationTable
- from "./components/AppInformationTable";
- import PlaystoreInformationTable
- from "./components/PlaystoreInformationTable";
+import FileInformationTable from "./components/FileInformationTable";
+import AppInformationTable from "./components/AppInformationTable";
+import PlaystoreInformationTable from "./components/PlaystoreInformationTable";
 import PlaystoreDescription from "./components/PlaystoreDescription";
 import DeveloperInformationTable from "./components/DeveloperInformationTable";
 import MiniStatistics from "components/card/MiniStatistics";
 import IconBox from "components/icons/IconBox";
+import InfoCard from "./components/InfoCard";
+import DecompiledCode from "./components/DecompiledCode";
+import ScanOptions from "./components/ScanOptions";
+import AppCertificate from "./components/AppCerificate";
+
+
 export default function UserReports() {
   // Chakra Color Mode
   const brandColor = useColorModeValue("brand.500", "white");
   const boxBg = useColorModeValue("secondaryGray.300", "whiteAlpha.100");
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
-      <SimpleGrid
-        columns={{ base: 1, md: 2, xl: 3}}
-        gap='20px'
-        mb='20px'>
+      <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} gap="20px" mb="20px">
         <AppScore />
-        <AppInformationTable />
-        <FileInformationTable />
+
+        <PlaystoreInformationTable />
+
+        <DeveloperInformationTable />
       </SimpleGrid>
 
-      <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px' mb='20px'>
-        <PlaystoreInformationTable />
-        <SimpleGrid gap='20px'>
+      <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap="20px" mb="20px">
+        <FileInformationTable />
+        <AppInformationTable />
+
+        <SimpleGrid gap="20px">
           <PlaystoreDescription />
-          <DeveloperInformationTable />
         </SimpleGrid>
+
+        <DecompiledCode />
       </SimpleGrid>
       <SimpleGrid
         columns={{ base: 1, md: 2, lg: 4, "2xl": 4 }}
-        gap='20px'
-        mb='20px'>
-        <MiniStatistics
-          startContent={
-            <IconBox
-              w='56px'
-              h='56px'
-              bg={boxBg}
-              icon={
-                <Icon w='32px' h='32px' as={MdBarChart} color={brandColor} />
-              }
-            />
-          }
-          name='Activities'
-          value='4' 
-        />
+        gap="20px"
+        mb="20px"
+      >
+        <InfoCard text="Activities" count={4} exportedCount={1} color="#00a4bb" icon={MdLanguage}/>
+        <InfoCard text="Services" count={15} exportedCount={6} color="#00b84c" icon={MdSettings}/>
+        <InfoCard text="Recievers" count={13} exportedCount={10} color="#ffca00" icon={MdInstallMobile}/>
+        <InfoCard text="Providers" count={3} exportedCount={2} color="#f3002e" icon={MdCellTower}/>
+      </SimpleGrid>
+      <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap="20px" mb="20px">
+        <ScanOptions />
+        <AppCertificate />
       </SimpleGrid>
       {/* <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap='20px' mb='20px'>
         <CheckTable columnsData={columnsDataCheck} tableData={tableDataCheck} />

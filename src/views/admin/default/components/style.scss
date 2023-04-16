@@ -28,3 +28,43 @@
 .ps-description {
     padding: 15px 24px;
 }
+
+.info-card {
+    border-radius: 22px;
+    padding: 10px;
+}
+
+.info-card-flex {
+    padding: 10px;
+    color: #fff;
+    h2 {
+        font-size: 45px;
+        font-weight: 700;
+    }
+    p {
+        font-size: 20px;
+    line-height: 29px;
+    padding: 10px;
+    }
+}
+
+.mini-stats {
+    border-radius: 0px;
+}
+
+.file-card {
+    padding: 20px;
+    padding-bottom: 10px;
+    img {
+        width: 30%;
+    }
+}
+
+.functionality-buttons {
+    justify-content: center;
+    Button{
+        padding-top: 25px;
+        padding-bottom: 25px;
+        margin: 5px;
+    }
+}
