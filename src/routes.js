@@ -2,12 +2,14 @@ import React from "react";
 
 import { Icon } from "@chakra-ui/react";
 import {
+  MdAndroid,
   MdInfo, MdList,
 } from "react-icons/md";
 
 // Admin Imports
 import MainDashboard from "views/admin/default";
 import Permissions from "views/admin/permissions/components/Permissions";
+import AndroidAPI from "views/admin/androidAPI";
 
 const routes = [
   {
@@ -23,6 +25,13 @@ const routes = [
     path: "/permissions",
     icon: <Icon as={MdList} width='20px' height='20px' color='inherit' />,
     component: Permissions,
+  },
+  {
+    name: "Android API",
+    layout: "/admin",
+    path: "/android",
+    icon: <Icon as={MdAndroid} width='20px' height='20px' color='inherit' />,
+    component: AndroidAPI,
   }
 ];
 
