@@ -3,13 +3,14 @@ import React from "react";
 import { Icon } from "@chakra-ui/react";
 import {
   MdAndroid,
-  MdInfo, MdList,
+  MdInfo, MdList, MdLocalActivity,
 } from "react-icons/md";
 
 // Admin Imports
 import MainDashboard from "views/admin/default";
 import Permissions from "views/admin/permissions/components/Permissions";
 import AndroidAPI from "views/admin/androidAPI";
+import BrowsableActivities from "views/admin/browsable-activities";
 
 const routes = [
   {
@@ -32,6 +33,13 @@ const routes = [
     path: "/android",
     icon: <Icon as={MdAndroid} width='20px' height='20px' color='inherit' />,
     component: AndroidAPI,
+  },
+  {
+    name: "Browsable Activities",
+    layout: "/admin",
+    path: "/browsable-activities",
+    icon: <Icon as={MdLocalActivity} width='20px' height='20px' color='inherit' />,
+    component: BrowsableActivities,
   }
 ];
 

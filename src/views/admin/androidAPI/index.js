@@ -1,6 +1,8 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
-import APITable from "./Table";
+
+import CommonTable from "components/table/CommonTable";
+
 const columnsData = [
   {
     Header: "NAME",
@@ -73,7 +75,7 @@ const apiData = [
 const AndroidAPI = () => {
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
-      <APITable columnsData={columnsData} tableData={apiData} />
+      <CommonTable columnsData={columnsData} tableData={apiData} tableName="API Table"/>
     </Box>
   );
 };

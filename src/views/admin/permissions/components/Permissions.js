@@ -1,6 +1,8 @@
 import React from "react";
-import PermissionsTable from "./PermissoinsTable";
 import { Box } from "@chakra-ui/react";
+
+import CommonTable from "components/table/CommonTable";
+
 const columnsData = [
   {
     Header: "PERMISSION",
@@ -80,7 +82,7 @@ const tableData = [
 const Permissions = () => {
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
-      <PermissionsTable columnsData={columnsData} tableData={tableData} />
+     <CommonTable columnsData={columnsData} tableData={tableData} tableName="Permissions Table"/>
     </Box>
   );
 };
