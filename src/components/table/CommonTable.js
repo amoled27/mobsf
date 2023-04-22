@@ -130,6 +130,7 @@ export default function APITable(props) {
                       data = (
                         <Intent cellValue={cell.value} textColor={textColor} />
                       );
+                      break;
                     case "SEVERITY":
                       data = (
                         <Severity cellValue={cell.value} textColor={textColor} />

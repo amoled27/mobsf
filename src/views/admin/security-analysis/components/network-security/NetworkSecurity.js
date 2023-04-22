@@ -44,7 +44,7 @@ const tableData = [
   {
     no: 4,
     scope: "*",
-    severity: "none",
+    severity: "secure",
     description: "Base config is configured to trustbundled certs @raw/go_daddy_class_2.",
   },
 ];

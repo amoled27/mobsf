@@ -5,6 +5,7 @@ import {
   MdOutlineError,
   MdInfo,
   MdStopCircle,
+  MdCheckCircle,
 } from "react-icons/md";
 
 const Severity = ({ cellValue, textColor }) => {
@@ -16,6 +17,8 @@ const Severity = ({ cellValue, textColor }) => {
         return "orange.500";
       case "info":
         return "cyan.500";
+      case "secure":
+        return "green.500";
       default:
         return "gray.500";
     }
@@ -29,6 +32,8 @@ const Severity = ({ cellValue, textColor }) => {
         return MdOutlineError;
       case "info":
         return MdInfo;
+      case "secure":
+        return MdCheckCircle;
       default:
         return MdStopCircle;
     }
