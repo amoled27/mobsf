@@ -6,6 +6,7 @@ import CertificateAnalysis from "./components/CertificateAnalysis";
 import ManifestAnalysis from "./components/ManifestAnalysis";
 
 import "./style.scss";
+import CodeAnalysis from "./components/CodeAnalysis";
 
 const SecurityAnalysis = () => {
   return (
@@ -18,6 +19,9 @@ const SecurityAnalysis = () => {
       </div>
       <div className="table-section">
         <ManifestAnalysis />
+      </div>
+      <div className="table-section">
+        <CodeAnalysis />
       </div>
     </Box>
   );

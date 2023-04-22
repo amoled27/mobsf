@@ -133,8 +133,12 @@ export default function APITable(props) {
                       break;
                     case "SEVERITY":
                       data = (
-                        <Severity cellValue={cell.value} textColor={textColor} />
+                        <Severity
+                          cellValue={cell.value}
+                          textColor={textColor}
+                        />
                       );
+                      break;
                   }
                   return (
                     <Td
