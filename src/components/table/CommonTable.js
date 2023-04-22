@@ -23,6 +23,7 @@ import Menu from "components/menu/MainMenu";
 import File from "components/table/Columns/Files";
 import Status from "./Columns/Status";
 import Intent from "./Columns/Intent";
+import Severity from "./Columns/Severity";
 
 export default function APITable(props) {
   const { columnsData, tableData, tableName } = props;
@@ -106,9 +107,11 @@ export default function APITable(props) {
                     case "PERMISSION":
                     case "INFO":
                     case "DESCRIPTION":
+                    case "SR_NO":
+                    case "SCOPE":
                     case "ACTIVITY":
                       data = (
-                        <Text color={textColor} fontSize="sm" fontWeight="700">
+                        <Text color={textColor} fontSize="sm" fontWeight="400">
                           {cell.value}
                         </Text>
                       );
@@ -126,6 +129,10 @@ export default function APITable(props) {
                     case "INTENT":
                       data = (
                         <Intent cellValue={cell.value} textColor={textColor} />
+                      );
+                    case "SEVERITY":
+                      data = (
+                        <Severity cellValue={cell.value} textColor={textColor} />
                       );
                   }
                   return (

@@ -3,7 +3,7 @@ import React from "react";
 import { Icon } from "@chakra-ui/react";
 import {
   MdAndroid,
-  MdInfo, MdList, MdLocalActivity,
+  MdInfo, MdList, MdLocalActivity, MdSecurity,
 } from "react-icons/md";
 
 // Admin Imports
@@ -11,6 +11,7 @@ import MainDashboard from "views/admin/default";
 import Permissions from "views/admin/permissions/components/Permissions";
 import AndroidAPI from "views/admin/androidAPI";
 import BrowsableActivities from "views/admin/browsable-activities";
+import SecurityAnalysis from "views/admin/security-analysis";
 
 const routes = [
   {
@@ -40,6 +41,13 @@ const routes = [
     path: "/browsable-activities",
     icon: <Icon as={MdLocalActivity} width='20px' height='20px' color='inherit' />,
     component: BrowsableActivities,
+  },
+  {
+    name: "Network Security",
+    layout: "/admin",
+    path: "/network-security",
+    icon: <Icon as={MdSecurity} width='20px' height='20px' color='inherit' />,
+    component: SecurityAnalysis,
   }
 ];
 
