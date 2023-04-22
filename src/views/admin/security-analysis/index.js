@@ -1,8 +1,9 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
 
-import NetworkSecurity from "./components/network-security/NetworkSecurity";
-import CertificateAnalysis from "./components/certificate-analysis/CertificateAnalysis";
+import NetworkSecurity from "./components/NetworkSecurity";
+import CertificateAnalysis from "./components/CertificateAnalysis";
+import ManifestAnalysis from "./components/ManifestAnalysis";
 
 import "./style.scss";
 
@@ -14,6 +15,9 @@ const SecurityAnalysis = () => {
       </div>
       <div className="table-section">
         <CertificateAnalysis />
+      </div>
+      <div className="table-section">
+        <ManifestAnalysis />
       </div>
     </Box>
   );
