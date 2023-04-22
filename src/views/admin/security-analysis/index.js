@@ -7,6 +7,7 @@ import ManifestAnalysis from "./components/ManifestAnalysis";
 
 import "./style.scss";
 import CodeAnalysis from "./components/CodeAnalysis";
+import NIAPAnalysis from "./components/NIAPAnalysis";
 
 const SecurityAnalysis = () => {
   return (
@@ -22,6 +23,9 @@ const SecurityAnalysis = () => {
       </div>
       <div className="table-section">
         <CodeAnalysis />
+      </div>
+      <div className="table-section">
+        <NIAPAnalysis />
       </div>
     </Box>
   );
