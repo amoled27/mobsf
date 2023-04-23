@@ -5,6 +5,7 @@ import "../style.scss";
 import URLs from "./components/Urls";
 import Emails from "./components/Emails";
 import Trackers from "./components/Trackers";
+import ReconnaissanceStrings from "./components/ReconnaissanceStrings";
 
 const Reconnaissance = () => {
   return (
@@ -17,6 +18,9 @@ const Reconnaissance = () => {
       </div>
       <div className="table-section">
         <Trackers />
+      </div>
+      <div className="table-section">
+        <ReconnaissanceStrings />
       </div>
     </Box>
   );
