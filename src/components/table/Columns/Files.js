@@ -1,17 +1,14 @@
 import { Text } from "@chakra-ui/react";
 import React from "react";
 
-const Files = ({ cellValue, textColor, isLink }) => {
+const Files = ({ cellValue, textColor, prefix }) => {
   return (
     <>
       {cellValue.map((file) => {
         return (
           <Text color={textColor} fontSize="sm" fontWeight="400">
-            {isLink ? (
-              <a
-                target="_blank"
-                href={`https://mobsf.live/view_file/?file=${file}`}
-              >
+            {prefix ? (
+              <a target="_blank" href={`${prefix}${file}`}>
                 {file}
               </a>
             ) : (
