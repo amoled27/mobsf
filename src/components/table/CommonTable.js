@@ -127,6 +127,7 @@ export default function APITable(props) {
                       );
                       break;
                     case "URL":
+                    case "EMAIL":
                         data = (
                           <File cellValue={cell.value} textColor={textColor} />
                         );

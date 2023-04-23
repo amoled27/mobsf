@@ -3,12 +3,16 @@ import React from "react";
 
 import "../style.scss";
 import URLs from "./components/Urls";
+import Emails from "./components/Emails";
 
 const Reconnaissance = () => {
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
       <div className="table-section">
         <URLs />
+      </div>
+      <div className="table-section">
+        <Emails />
       </div>
     </Box>
   );
