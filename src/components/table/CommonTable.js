@@ -26,7 +26,7 @@ import Intent from "./Columns/Intent";
 import Severity from "./Columns/Severity";
 
 export default function APITable(props) {
-  const { columnsData, tableData, tableName } = props;
+  const { columnsData, tableData, tableName, isLink = true } = props;
 
   const columns = useMemo(() => columnsData, [columnsData]);
   const data = useMemo(() => tableData, [tableData]);
@@ -118,7 +118,7 @@ export default function APITable(props) {
                       break;
                     case "FILES":
                       data = (
-                        <File cellValue={cell.value} textColor={textColor} />
+                        <File cellValue={cell.value} textColor={textColor} isLink={isLink}/>
                       );
                       break;
                     case "STATUS":
