@@ -8,6 +8,7 @@ import {
   MdList,
   MdLocalActivity,
   MdSecurity,
+  MdWindow,
 } from "react-icons/md";
 
 // Admin Imports
@@ -17,6 +18,7 @@ import AndroidAPI from "views/admin/androidAPI";
 import BrowsableActivities from "views/admin/browsable-activities";
 import SecurityAnalysis from "views/admin/security-analysis";
 import Reconnaissance from "views/admin/Reconnaissance";
+import ReportComponents from "views/admin/ReportComponents";
 
 const routes = [
   {
@@ -63,6 +65,13 @@ const routes = [
     icon: <Icon as={MdAdd} width="20px" height="20px" color="inherit" />,
     component: Reconnaissance,
   },
+  {
+    name: "Components",
+    layout: "/admin",
+    path: "/components",
+    icon: <Icon as={MdWindow} width="20px" height="20px" color="inherit" />,
+    component: ReportComponents,
+  }
 ];
 
 export default routes;
