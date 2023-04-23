@@ -5,7 +5,7 @@ import NetworkSecurity from "./components/NetworkSecurity";
 import CertificateAnalysis from "./components/CertificateAnalysis";
 import ManifestAnalysis from "./components/ManifestAnalysis";
 
-import "./style.scss";
+import "../style.scss";
 import CodeAnalysis from "./components/CodeAnalysis";
 import NIAPAnalysis from "./components/NIAPAnalysis";
 import FileAnalysis from "./components/FileAnalysis";

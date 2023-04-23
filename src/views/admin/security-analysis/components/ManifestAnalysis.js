@@ -8,7 +8,7 @@ const columnsData = [
     accessor: "no",
   },
   {
-    Header: "DESCRIPTION",
+    Header: "ISSUE",
     accessor: "issue"
   },
   {

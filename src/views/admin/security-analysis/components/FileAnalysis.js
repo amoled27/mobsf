@@ -9,7 +9,7 @@ const columnsData = [
     accessor: "no",
   },
   {
-    Header: "DESCRIPTION",
+    Header: "ISSUE",
     accessor: "issue",
   },
   {
@@ -32,7 +32,6 @@ const FileAnalysis = () => {
       columnsData={columnsData}
       tableData={tableData}
       tableName="File Analysis"
-      isLink={false}
     />
   );
 };

@@ -8,15 +8,15 @@ const columnsData = [
     accessor: "no",
   },
   {
-    Header: "DESCRIPTION",
+    Header: "INDENTIFIER",
     accessor: "identifier",
   },
   {
-    Header: "DESCRIPTION",
+    Header: "REQUIREMENT",
     accessor: "requirement",
   },
   {
-    Header: "DESCRIPTION",
+    Header: "FEATURE",
     accessor: "feature",
   },
   {

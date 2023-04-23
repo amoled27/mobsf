@@ -2,6 +2,7 @@ import { Box } from "@chakra-ui/react";
 import React from "react";
 
 import CommonTable from "components/table/CommonTable";
+import AppConstants from "appConstants";
 
 const columnsData = [
   {
@@ -75,7 +76,7 @@ const apiData = [
 const AndroidAPI = () => {
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
-      <CommonTable columnsData={columnsData} tableData={apiData} tableName="API Table"/>
+      <CommonTable columnsData={columnsData} tableData={apiData} tableName="API Table" prefix={AppConstants.fileURLPrefix}/>
     </Box>
   );
 };

@@ -4,7 +4,7 @@ import CommonTable from "components/table/CommonTable";
 
 const columnsData = [
   {
-    Header: "DESCRIPTION",
+    Header: "TITLE",
     accessor: "title",
   },
   {
