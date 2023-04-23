@@ -115,6 +115,8 @@ export default function APITable(props) {
                     case "REQUIREMENT":
                     case "ISSUE":
                     case "TITLE":
+                    case "TRACKER NAME":
+                    case "CATEGORIES":
                       data = (
                         <Text color={textColor} fontSize="sm" fontWeight="400">
                           {cell.value}
