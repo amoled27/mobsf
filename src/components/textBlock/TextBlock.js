@@ -14,12 +14,12 @@ const TextBlock = ({ textBlockName = "text-block", data, textLimit = 450 }) => {
 
   const downloadAsTxt = () => {
     const element = document.createElement("a");
-    const file = new Blob([data], { type : 'text/plain'});
+    const file = new Blob([data], { type: "text/plain" });
     element.href = URL.createObjectURL(file);
     element.download = `${textBlockName}.txt`;
     document.body.appendChild(element); // Required for this to work in FireFox
     element.click();
-  }
+  };
   return (
     <Card
       direction="column"
@@ -52,12 +52,14 @@ const TextBlock = ({ textBlockName = "text-block", data, textLimit = 450 }) => {
       <Flex px="25px" justify="space-between" mb="10px" align="center">
         <Text>
           {showMore ? data : data.substring(0, textLimit)}
-          <a
-            onClick={() => onShowMoreToggle()}
-            style={{ color: "blue", cursor: "pointer" }}
-          >
-            {showMoreText}
-          </a>
+          {data.length > textLimit ? (
+            <a
+              onClick={() => onShowMoreToggle()}
+              style={{ color: "blue", cursor: "pointer" }}
+            >
+              {showMoreText}
+            </a>
+          ) : null}
         </Text>
       </Flex>
     </Card>
