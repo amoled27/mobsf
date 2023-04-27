@@ -21,65 +21,72 @@ export default function Conversion(props) {
     "unset"
   );
   return (
-    <Card p='20px' align='center' direction='column' w='100%' {...rest}>
+      <Flex direction="column" justifyContent="space-between" className="card-flex">
+
       <Flex
         px={{ base: "0px", "2xl": "10px" }}
-        justifyContent='space-between'
-        alignItems='center'
-        w='100%'
-        mb='8px'>
-        <Text color={textColor} fontSize='md' fontWeight='600' mt='4px'>
+        justifyContent="space-between"
+        alignItems="center"
+        className="app-heading"
+        w="100%"
+        mb="8px"
+      >
+        <Text color={textColor} fontSize="md" fontWeight="600" mt="4px">
           App Scores
         </Text>
       </Flex>
-      <div className="centerize">
-          <img src={androidPng} className="android"/>
-      </div>
-      <Card
-        bg={cardColor}
-        flexDirection='row'
-        boxShadow={cardShadow}
-        w='100%'
-        p='15px'
-        px='20px'
-        mt='15px'
-        mx='auto'>
-        <Flex direction='column' py='5px'>
-          <Flex align='center'>
-            <Text
-              fontSize='xs'
-              color='secondaryGray.600'
-              fontWeight='700'
-              mb='5px'>
-              Security Score
-            </Text>
+        <div className="centerize app-image-container">
+          <img src={androidPng} className="app-image" />
+        </div>
+        <Card
+          bg={cardColor}
+          flexDirection="row"
+          boxShadow={cardShadow}
+          className="center-card"
+          w="100%"
+          p="15px"
+          px="20px"
+          mt="15px"
+          mx="auto"
+        >
+          <Flex direction="column" py="5px">
+            <Flex align="center">
+              <Text
+                color="secondaryGray.600"
+                fontWeight="700"
+                mb="5px"
+                className="app-score-text"
+              >
+                Security Score
+              </Text>
+            </Flex>
+            <Flex>
+              <img className="appscore-warning" src={warning} />
+              <Text fontSize="xl" color={textColor} fontWeight="700">
+                59/100
+              </Text>
+            </Flex>
           </Flex>
-          <Flex>
-          <img  className="appscore-warning" src={warning}/>
-          <Text fontSize='lg' color={textColor} fontWeight='700'>
-            59/100
-          </Text>
+          <VSeparator mx={{ base: "30px", xl: "30px", "2xl": "60px" }} />
+          <Flex direction="column" py="5px" me="10px">
+            <Flex align="center">
+              <Text
+                className="app-score-text"
+                color="secondaryGray.600"
+                fontWeight="700"
+                mb="5px"
+              >
+                Trackers
+              </Text>
+            </Flex>
+            <Flex>
+              <img className="appscore-trackers-warning" src={secure} />
+              <Text fontSize="xl" color={textColor} fontWeight="700">
+                0/148
+              </Text>
+            </Flex>
           </Flex>
-        </Flex>
-        <VSeparator mx={{ base: "60px", xl: "60px", "2xl": "60px" }} />
-        <Flex direction='column' py='5px' me='10px'>
-          <Flex align='center'>
-            <Text
-              fontSize='xs'
-              color='secondaryGray.600'
-              fontWeight='700'
-              mb='5px'>
-              Trackers
-            </Text>
-          </Flex>
-          <Flex>
-          <img  className="appscore-trackers-warning" src={secure}/>
-          <Text fontSize='lg' color={textColor} fontWeight='700'>
-            0/148
-          </Text>
-          </Flex>
-        </Flex>
-      </Card>
-    </Card>
+        </Card>
+      </Flex>
   );
 }

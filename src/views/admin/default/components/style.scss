@@ -3,8 +3,13 @@
     justify-content: center;
 }
 
-.android {
-    width: 50%;
+.app-image-container {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.app-image {
+    width: 30%;
 }
 
 .appscore-warning {
@@ -68,3 +73,42 @@
         margin: 5px;
     }
 }
+
+.center-card {
+    justify-content: center;
+}
+
+.card-flex {
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.app-heading {
+    padding: 15px 30px;
+    p {
+        padding-left: 10px;
+    }
+}
+
+.app-score-text {
+    font-size: 19px
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .app-score-text {
+        font-size: 13px
+    }
+  }
+
+  @media screen and (min-width: 1200px) and (max-width: 1450px){
+    .app-score-text {
+        font-size: 15px
+    }
+  }
+
+
+  @media screen and (max-width: 400px){
+    .app-score-text {
+        font-size: 15px
+    }
+  }
