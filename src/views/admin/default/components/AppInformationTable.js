@@ -9,7 +9,14 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+
+// Custom components
 import Card from "components/card/Card";
+
+// Icons
+import AppInfoLogo from "assets/img/icons/app.png"
+
+// CSS
 import "./style.scss";
 
 const AppInformationTable = () => {
@@ -21,7 +28,12 @@ const AppInformationTable = () => {
       px="0px"
       overflowX={{ sm: "scroll", lg: "hidden" }}
     >
-      <Flex px="25px" justify="space-between" align="center">
+      <Flex px="25px" align="center">
+        <img
+          src={AppInfoLogo}
+          className="heading-logo heading-logo-svg"
+          alt="app_info_icon"
+        />
         <Text
           color={textColor}
           fontSize="22px"
@@ -32,7 +44,7 @@ const AppInformationTable = () => {
         </Text>
       </Flex>
       <TableContainer style={{ marginTop: "20px" }}>
-        <Table variant="simple"  className="infoTable">
+        <Table variant="simple" className="infoTable">
           <Tbody>
             <Tr>
               <Td>App Name</Td>

@@ -9,7 +9,14 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+
+// Custom components
 import Card from "components/card/Card";
+
+// Icons
+import PlayStoreLogo from "assets/img/icons/play-store.svg";
+
+// CSS
 import "./style.scss";
 
 const PlaystoreInformationTable = () => {
@@ -21,7 +28,12 @@ const PlaystoreInformationTable = () => {
       px="0px"
       overflowX={{ sm: "scroll", lg: "hidden" }}
     >
-      <Flex px="25px" justify="space-between" align="center">
+      <Flex px="25px" align="center">
+        <img
+          src={PlayStoreLogo}
+          className="heading-logo heading-logo-svg"
+          alt="playstore_logo"
+        />
         <Text
           color={textColor}
           fontSize="22px"
@@ -58,7 +70,7 @@ const PlaystoreInformationTable = () => {
               <Td>Playstore URL</Td>
               <Td>
                 <a href="https://play.google.com/store/apps/details?id=com.aramco.ehauling&hl=en&gl=us">
-                com.aramco.ehauling
+                  com.aramco.ehauling
                 </a>
               </Td>
             </Tr>
@@ -68,7 +80,12 @@ const PlaystoreInformationTable = () => {
             </Tr>
             <Tr>
               <Td>Privacy Policy</Td>
-              <Td> <a href="https://css.sapublichosting.com/privacy/eHauling_App_Privacy_Notice.htm">Privacy link</a></Td>
+              <Td>
+                {" "}
+                <a href="https://css.sapublichosting.com/privacy/eHauling_App_Privacy_Notice.htm">
+                  Privacy link
+                </a>
+              </Td>
             </Tr>
           </Tbody>
         </Table>

@@ -94,6 +94,18 @@
     font-size: 19px
 }
 
+.heading-logo {
+    padding-right: 10px;
+}
+
+.heading-logo-svg {
+    width: 40px;
+}
+
+.heading-logo-png {
+    width: 48px;
+}
+
 @media screen and (min-width: 768px) and (max-width: 991px){
     .app-score-text {
         font-size: 13px

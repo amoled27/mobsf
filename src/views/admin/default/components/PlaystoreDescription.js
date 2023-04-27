@@ -1,10 +1,13 @@
 import React from "react";
-import {
-  Flex,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Flex, Text, useColorModeValue } from "@chakra-ui/react";
+
+// Custom components
 import Card from "components/card/Card";
+
+// Icons
+import PlayStoreLogo from "assets/img/icons/play-store.svg";
+
+// CSS
 import "./style.scss";
 
 const PlaystoreDescription = () => {
@@ -16,7 +19,12 @@ const PlaystoreDescription = () => {
       px="0px"
       overflowX={{ sm: "scroll", lg: "hidden" }}
     >
-      <Flex px="25px" justify="space-between" align="center">
+      <Flex px="25px" align="center">
+        <img
+          src={PlayStoreLogo}
+          className="heading-logo heading-logo-svg"
+          alt="playstore_logo"
+        />
         <Text
           color={textColor}
           fontSize="22px"
@@ -26,7 +34,7 @@ const PlaystoreDescription = () => {
           Playstore Description
         </Text>
       </Flex>
-        <Flex className="ps-description">
+      <Flex className="ps-description">
         <p>
           The eHauling system streamlines the truck delivery of hydrocarbon
           refined products across the Saudi Aramco distribution operations
@@ -37,7 +45,7 @@ const PlaystoreDescription = () => {
           and optimize the tracking and processing of stock transfer movements
           by trucks, through hauling service providers.
         </p>
-        </Flex>
+      </Flex>
     </Card>
   );
 };

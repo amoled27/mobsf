@@ -9,8 +9,15 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import "./style.scss";
+
+// Custome components
 import Card from "components/card/Card";
+
+//Icons
+import FileIcon from "assets/img/icons/file-icon.svg";
+
+// CSS
+import "./style.scss";
 
 const FileInformationTable = () => {
   const textColor = useColorModeValue("secondaryGray.900", "white");
@@ -21,7 +28,12 @@ const FileInformationTable = () => {
       px="0px"
       overflowX={{ sm: "scroll", lg: "hidden" }}
     >
-      <Flex px="25px" justify="space-between" align="center">
+      <Flex px="25px" align="center">
+        <img
+          src={FileIcon}
+          className="heading-logo heading-logo-svg"
+          alt="file_logo"
+        />
         <Text
           color={textColor}
           fontSize="22px"
@@ -32,7 +44,7 @@ const FileInformationTable = () => {
         </Text>
       </Flex>
       <TableContainer style={{ marginTop: "20px" }}>
-        <Table variant="simple"  className="infoTable">
+        <Table variant="simple" className="infoTable">
           <Tbody>
             <Tr>
               <Td>File Name</Td>
