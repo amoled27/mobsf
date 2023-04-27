@@ -20,48 +20,44 @@
 
 */
 
-// Chakra imports
-import { Box, SimpleGrid, useColorModeValue, Icon } from "@chakra-ui/react";
-
-import { MdBarChart, MdSettings, MdLanguage, MdCellTower, MdInstallMobile } from "react-icons/md";
-// Custom components
 import React from "react";
+
+// Chakra imports
+import { Box, SimpleGrid } from "@chakra-ui/react";
+import {
+  MdSettings,
+  MdLanguage,
+  MdCellTower,
+  MdInstallMobile,
+} from "react-icons/md";
+
+// Custom components
 import AppScore from "views/admin/default/components/AppScore";
 import FileInformationTable from "./components/FileInformationTable";
 import AppInformationTable from "./components/AppInformationTable";
 import PlaystoreInformationTable from "./components/PlaystoreInformationTable";
 import PlaystoreDescription from "./components/PlaystoreDescription";
 import DeveloperInformationTable from "./components/DeveloperInformationTable";
-import MiniStatistics from "components/card/MiniStatistics";
-import IconBox from "components/icons/IconBox";
 import InfoCard from "./components/InfoCard";
 import DecompiledCode from "./components/DecompiledCode";
 import ScanOptions from "./components/ScanOptions";
 import AppCertificate from "./components/AppCerificate";
 
-
 export default function UserReports() {
-  // Chakra Color Mode
-  const brandColor = useColorModeValue("brand.500", "white");
-  const boxBg = useColorModeValue("secondaryGray.300", "whiteAlpha.100");
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
       <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} gap="20px" mb="20px">
         <AppScore />
-
         <PlaystoreInformationTable />
-
         <DeveloperInformationTable />
       </SimpleGrid>
 
       <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap="20px" mb="20px">
         <FileInformationTable />
         <AppInformationTable />
-
         <SimpleGrid gap="20px">
           <PlaystoreDescription />
         </SimpleGrid>
-
         <DecompiledCode />
       </SimpleGrid>
       <SimpleGrid
@@ -69,32 +65,39 @@ export default function UserReports() {
         gap="20px"
         mb="20px"
       >
-        <InfoCard text="Activities" count={4} exportedCount={1} color="#00a4bb" icon={MdLanguage}/>
-        <InfoCard text="Services" count={15} exportedCount={6} color="#00b84c" icon={MdSettings}/>
-        <InfoCard text="Recievers" count={13} exportedCount={10} color="#ffca00" icon={MdInstallMobile}/>
-        <InfoCard text="Providers" count={3} exportedCount={2} color="#f3002e" icon={MdCellTower}/>
+        <InfoCard
+          text="Activities"
+          count={4}
+          exportedCount={1}
+          color="#00a4bb"
+          icon={MdLanguage}
+        />
+        <InfoCard
+          text="Services"
+          count={15}
+          exportedCount={6}
+          color="#00b84c"
+          icon={MdSettings}
+        />
+        <InfoCard
+          text="Recievers"
+          count={13}
+          exportedCount={10}
+          color="#ffca00"
+          icon={MdInstallMobile}
+        />
+        <InfoCard
+          text="Providers"
+          count={3}
+          exportedCount={2}
+          color="#f3002e"
+          icon={MdCellTower}
+        />
       </SimpleGrid>
       <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap="20px" mb="20px">
         <ScanOptions />
         <AppCertificate />
       </SimpleGrid>
-      {/* <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap='20px' mb='20px'>
-        <CheckTable columnsData={columnsDataCheck} tableData={tableDataCheck} />
-        <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
-          <DailyTraffic />
-          <AppScore />
-        </SimpleGrid>
-      </SimpleGrid> */}
-      {/* <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap='20px' mb='20px'>
-        <ComplexTable
-          columnsData={columnsDataComplex}
-          tableData={tableDataComplex}
-        />
-        <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
-          <Tasks />
-          <MiniCalendar h='100%' minW='100%' selectRange={false} />
-        </SimpleGrid>
-      </SimpleGrid> */}
     </Box>
   );
 }
