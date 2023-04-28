@@ -8,6 +8,7 @@ import {
   MdList,
   MdLocalActivity,
   MdSecurity,
+  MdVerified,
   MdWindow,
 } from "react-icons/md";
 
@@ -19,6 +20,7 @@ import BrowsableActivities from "views/admin/browsable-activities";
 import SecurityAnalysis from "views/admin/security-analysis";
 import Reconnaissance from "views/admin/Reconnaissance";
 import ReportComponents from "views/admin/ReportComponents";
+import SignerCertificate from "views/admin/signer-certificate";
 
 const routes = [
   {
@@ -27,6 +29,13 @@ const routes = [
     path: "/default",
     icon: <Icon as={MdInfo} width="20px" height="20px" color="inherit" />,
     component: MainDashboard,
+  },
+  {
+    name: "Signer Cerificate",
+    layout: "/admin",
+    path: "/certificate",
+    icon: <Icon as={MdVerified} width="20px" height="20px" color="inherit" />,
+    component: SignerCertificate,
   },
   {
     name: "Permissions",

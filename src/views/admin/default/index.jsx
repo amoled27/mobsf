@@ -41,7 +41,6 @@ import DeveloperInformationTable from "./components/DeveloperInformationTable";
 import InfoCard from "./components/InfoCard";
 import DecompiledCode from "./components/DecompiledCode";
 import ScanOptions from "./components/ScanOptions";
-import AppCertificate from "./components/AppCerificate";
 
 export default function UserReports() {
   return (
@@ -94,9 +93,8 @@ export default function UserReports() {
           icon={MdCellTower}
         />
       </SimpleGrid>
-      <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap="20px" mb="20px">
+      <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap="20px" mb="20px">
         <ScanOptions />
-        <AppCertificate />
       </SimpleGrid>
     </Box>
   );
