@@ -20,15 +20,10 @@ import {
 // Custom components
 import Card from "components/card/Card";
 import Menu from "components/menu/MainMenu";
-import File from "components/table/Columns/Files";
-import Status from "./Columns/Status";
-import Intent from "./Columns/Intent";
-import Severity from "./Columns/Severity";
 import NestedTable from "./Columns/NestedTable";
 
 export default function APITable(props) {
-  const { columnsData, tableData, tableName, prefix, nestedColumnsData } =
-    props;
+  const { columnsData, tableData, tableName, prefix } = props;
 
   const columns = useMemo(() => columnsData, [columnsData]);
   const data = useMemo(() => tableData, [tableData]);
@@ -106,66 +101,17 @@ export default function APITable(props) {
                   let data = "";
                   switch (cell.column.Header) {
                     case "NAME":
-                    case "PERMISSION":
-                    case "INFO":
-                    case "DESCRIPTION":
-                    case "SR_NO":
-                    case "SCOPE":
-                    case "INDENTIFIER":
-                    case "ACTIVITY":
-                    case "FEATURE":
-                    case "REQUIREMENT":
-                    case "ISSUE":
-                    case "TITLE":
-                    case "TRACKER NAME":
-                    case "CATEGORIES":
-                    case "DEX":
                       data = (
                         <Text color={textColor} fontSize="sm" fontWeight="400">
                           {cell.value}
                         </Text>
                       );
                       break;
-                    case "FILES":
-                      data = (
-                        <File
-                          cellValue={cell.value}
-                          textColor={textColor}
-                          prefix={prefix}
-                        />
-                      );
-                      break;
-                    case "URL":
-                    case "EMAIL":
-                      data = (
-                        <File cellValue={cell.value} textColor={textColor} />
-                      );
-                      break;
-                    case "STATUS":
-                      data = (
-                        <Status cellValue={cell.value} textColor={textColor} />
-                      );
-                      break;
-                    case "INTENT":
-                      data = (
-                        <Intent cellValue={cell.value} textColor={textColor} />
-                      );
-                      break;
                     case "SEVERITY":
                       data = (
-                        <Severity
-                          cellValue={cell.value}
-                          textColor={textColor}
-                        />
+                        <NestedTable />
                       );
                       break;
-                    case "DETECTIONS":
-                      data = (
-                        <NestedTable
-                          columnsData={nestedColumnsData}
-                          tableData={cell.value}
-                        />
-                      );
                   }
                   return (
                     <Td

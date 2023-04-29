@@ -4,6 +4,7 @@ import { Icon } from "@chakra-ui/react";
 import {
   MdAdd,
   MdAndroid,
+  MdBugReport,
   MdInfo,
   MdList,
   MdLocalActivity,
@@ -21,6 +22,7 @@ import SecurityAnalysis from "views/admin/security-analysis";
 import Reconnaissance from "views/admin/Reconnaissance";
 import ReportComponents from "views/admin/ReportComponents";
 import SignerCertificate from "views/admin/signer-certificate";
+import MalwareAnalysis from "views/admin/malware-analysis";
 
 const routes = [
   {
@@ -66,6 +68,13 @@ const routes = [
     path: "/security-analysis",
     icon: <Icon as={MdSecurity} width="20px" height="20px" color="inherit" />,
     component: SecurityAnalysis,
+  },
+  {
+    name: "Malware Analysis",
+    layout: "/admin",
+    path: "/malware-analysis",
+    icon: <Icon as={MdBugReport} width="20px" height="20px" color="inherit" />,
+    component: MalwareAnalysis,
   },
   {
     name: "Reconnaissance",
