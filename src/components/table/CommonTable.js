@@ -25,6 +25,7 @@ import Status from "./Columns/Status";
 import Intent from "./Columns/Intent";
 import Severity from "./Columns/Severity";
 import NestedTable from "./Columns/NestedTable";
+import Objects from "./Columns/Objects";
 
 export default function APITable(props) {
   const { columnsData, tableData, tableName, prefix, nestedColumnsData } =
@@ -120,6 +121,7 @@ export default function APITable(props) {
                     case "TRACKER NAME":
                     case "CATEGORIES":
                     case "DEX":
+                    case "DOMAIN":
                       data = (
                         <Text color={textColor} fontSize="sm" fontWeight="400">
                           {cell.value}
@@ -166,6 +168,12 @@ export default function APITable(props) {
                           tableData={cell.value}
                         />
                       );
+                      break;
+                    case "GEOLOCATION":
+                      data= (
+                        <Objects  cellValue={cell.value} textColor={textColor} />
+                      )
+                      break;
                   }
                   return (
                     <Td

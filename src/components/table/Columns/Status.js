@@ -14,6 +14,8 @@ const Status = ({ cellValue, textColor }) => {
                   ? "green.500"
                   : cellValue=== "dangerous"
                   ? "red.500"
+                  : cellValue=== "ok"
+                  ? "green.500"
                   : cellValue=== "SignatureOrSystem"
                   ? "orange.500"
                   : cellValue=== "normal"
@@ -24,6 +26,8 @@ const Status = ({ cellValue, textColor }) => {
                 cellValue=== "signature"
                   ? MdCheckCircle
                   : cellValue=== "normal"
+                  ? MdCheckCircle
+                  : cellValue=== "ok"
                   ? MdCheckCircle
                   : cellValue=== "dangerous"
                   ? MdCancel
