@@ -43,6 +43,7 @@ const CertificateAnalysis = () => {
       columnsData={columnsData}
       tableData={tableData}
       tableName="Certificate Analysis"
+      hasStatistics={true}
     />
   );
 };

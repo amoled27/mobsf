@@ -2,10 +2,10 @@ import { Flex, Icon, Text } from "@chakra-ui/react";
 import React from "react";
 import {
   MdCancel,
-  MdOutlineError,
   MdInfo,
   MdStopCircle,
   MdCheckCircle,
+  MdWarning,
 } from "react-icons/md";
 
 const Severity = ({ cellValue, textColor }) => {
@@ -29,7 +29,7 @@ const Severity = ({ cellValue, textColor }) => {
       case "high":
         return MdCancel;
       case "warning":
-        return MdOutlineError;
+        return MdWarning;
       case "info":
         return MdInfo;
       case "secure":

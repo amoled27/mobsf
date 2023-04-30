@@ -59,6 +59,7 @@ const ManifestAnalysis = () => {
       columnsData={columnsData}
       tableData={tableData}
       tableName="Manifest Analysis"
+      hasStatistics={true}
     />
   );
 };

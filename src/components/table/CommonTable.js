@@ -1,5 +1,6 @@
 import {
   Flex,
+  Icon,
   Table,
   Tbody,
   Td,
@@ -10,6 +11,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React, { useMemo } from "react";
+import { MdDangerous, MdInfo, MdStopCircle, MdWarning } from "react-icons/md";
+import { CheckCircleIcon } from "@chakra-ui/icons";
 import {
   useGlobalFilter,
   usePagination,
@@ -26,11 +29,20 @@ import Intent from "./Columns/Intent";
 import Severity from "./Columns/Severity";
 import NestedTable from "./Columns/NestedTable";
 import Objects from "./Columns/Objects";
+import IconBox from "components/icons/IconBox";
+import MiniStatistics from "components/card/MiniStatistics";
 
 export default function APITable(props) {
-  const { columnsData, tableData, tableName, prefix, nestedColumnsData } =
-    props;
+  const {
+    columnsData,
+    tableData,
+    tableName,
+    prefix,
+    nestedColumnsData,
+    hasStatistics = false,
+  } = props;
 
+  const boxBg = useColorModeValue("secondaryGray.300", "whiteAlpha.100");
   const columns = useMemo(() => columnsData, [columnsData]);
   const data = useMemo(() => tableData, [tableData]);
 
@@ -56,6 +68,50 @@ export default function APITable(props) {
 
   const textColor = useColorModeValue("secondaryGray.900", "white");
   const borderColor = useColorModeValue("gray.200", "whiteAlpha.100");
+
+  const statuses = {
+    high: 0,
+    warning: 0,
+    info: 0,
+    secure: 0,
+    supressed: 0,
+  };
+
+  if (hasStatistics)
+    tableData.forEach((element) => {
+      statuses[element.severity] += 1;
+    });
+
+  const getSeverityIcon = (severity) => {
+    switch (severity) {
+      case "high":
+        return MdDangerous;
+      case "warning":
+        return MdWarning;
+      case "info":
+        return MdInfo;
+      case "secure":
+        return CheckCircleIcon;
+      default:
+        return MdStopCircle;
+    }
+  };
+
+  const getSeverityColor = (severity) => {
+    switch (severity) {
+      case "high":
+        return "red.500";
+      case "warning":
+        return "orange.500";
+      case "info":
+        return "cyan.500";
+      case "secure":
+        return "green.500";
+      default:
+        return "gray.500";
+    }
+  };
+
   return (
     <Card
       direction="column"
@@ -73,6 +129,32 @@ export default function APITable(props) {
           {tableName}
         </Text>
         <Menu />
+      </Flex>
+      <Flex px="25px" justify="space-between" mb="10px" align="center">
+        {hasStatistics
+          ? Object.keys(statuses).map((statusKeys) => (
+              <MiniStatistics
+                key={statusKeys}
+                startContent={
+                  <IconBox
+                    w="56px"
+                    h="56px"
+                    bg={boxBg}
+                    icon={
+                      <Icon
+                        w="32px"
+                        h="32px"
+                        as={getSeverityIcon(statusKeys)}
+                        color={getSeverityColor(statusKeys)}
+                      />
+                    }
+                  />
+                }
+                value={statuses[statusKeys]}
+                name={statusKeys}
+              />
+            ))
+          : null}
       </Flex>
       <Table {...getTableProps()} variant="simple" color="gray.500" mb="24px">
         <Thead>
@@ -170,9 +252,9 @@ export default function APITable(props) {
                       );
                       break;
                     case "GEOLOCATION":
-                      data= (
-                        <Objects  cellValue={cell.value} textColor={textColor} />
-                      )
+                      data = (
+                        <Objects cellValue={cell.value} textColor={textColor} />
+                      );
                       break;
                   }
                   return (

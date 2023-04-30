@@ -6,7 +6,7 @@ const Files = ({ cellValue, textColor, prefix }) => {
     <>
       {cellValue.map((file) => {
         return (
-          <Text color={textColor} fontSize="sm" fontWeight="400">
+          <Text color={textColor} fontSize="sm" fontWeight="400" key={file}>
             {prefix ? (
               <a target="_blank" href={`${prefix}${file}`}>
                 {file}

@@ -39,6 +39,22 @@ const tableData = [
     options: true
   },
   {
+    no: 1,
+    issue: "The App logs information. Sensitive information should never be logged.",
+    severity: "secure",
+    standards: "CWE: CWE-532: Insertion of Sensitive Information into Log File OWASP MASVS: MSTG-STORAGE-3",
+    files: ["com/as/keylogger/AccSvc.java", "com/as/keylogger/MainActivity.java"],
+    options: true
+  },
+  {
+    no: 1,
+    issue: "The App logs information. Sensitive information should never be logged.",
+    severity: "warning",
+    standards: "CWE: CWE-532: Insertion of Sensitive Information into Log File OWASP MASVS: MSTG-STORAGE-3",
+    files: ["com/as/keylogger/AccSvc.java", "com/as/keylogger/MainActivity.java"],
+    options: true
+  },
+  {
     no: 2,
     issue: "The App logs information. Sensitive information should never be logged.",
     severity: "info",
@@ -54,6 +70,30 @@ const tableData = [
     files: ["com/as/keylogger/AccSvc.java", "com/as/keylogger/MainActivity.java"],
     options: true
   },
+  {
+    no: 4,
+    issue: "The App logs information. Sensitive information should never be logged.",
+    severity: "supressed",
+    standards: "CWE: CWE-532: Insertion of Sensitive Information into Log File OWASP MASVS: MSTG-STORAGE-3",
+    files: ["com/as/keylogger/AccSvc.java", "com/as/keylogger/MainActivity.java"],
+    options: true
+  },
+  {
+    no: 5,
+    issue: "The App logs information. Sensitive information should never be logged.",
+    severity: "supressed",
+    standards: "CWE: CWE-532: Insertion of Sensitive Information into Log File OWASP MASVS: MSTG-STORAGE-3",
+    files: ["com/as/keylogger/AccSvc.java", "com/as/keylogger/MainActivity.java"],
+    options: true
+  },
+  {
+    no: 5,
+    issue: "The App logs information. Sensitive information should never be logged.",
+    severity: "high",
+    standards: "CWE: CWE-532: Insertion of Sensitive Information into Log File OWASP MASVS: MSTG-STORAGE-3",
+    files: ["com/as/keylogger/AccSvc.java", "com/as/keylogger/MainActivity.java"],
+    options: true
+  },
 ];
 
 const CodeAnalysis = () => {
@@ -62,6 +102,7 @@ const CodeAnalysis = () => {
       columnsData={columnsData}
       tableData={tableData}
       tableName="Code Analysis"
+      hasStatistics={true}
     />
   );
 };

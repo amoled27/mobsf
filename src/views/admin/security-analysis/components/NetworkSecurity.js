@@ -56,6 +56,7 @@ const NetworkSecurity = () => {
         columnsData={columnsData}
         tableData={tableData}
         tableName="Network Security"
+        hasStatistics={true}
       />
   );
 };
